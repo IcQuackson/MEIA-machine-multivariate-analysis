@@ -54,7 +54,6 @@ compute_pca <- function(X = load_machines_subset(),
     pve,
     names.arg = paste0("PC", seq_along(pve)),
     las = 2,
-    main = "Scree plot (PVE) - Original scale (covariance)",
     xlab = "Principal components",
     ylab = "Proportion of variance explained"
   )
@@ -74,7 +73,6 @@ compute_pca <- function(X = load_machines_subset(),
     type = "b",
     pch = 19,
     ylim = c(0, 1),
-    main = "Cumulative explained variance (CPVE)",
     xlab = "Number of PCs",
     ylab = "Cumulative proportion of variance explained"
   )
