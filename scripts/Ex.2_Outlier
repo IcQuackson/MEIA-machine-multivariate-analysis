@@ -1,9 +1,0 @@
-#introduzir outlier
-i1 <- which(rownames(machines) == "hp-3000/64")
-machines[i1, ] <- c(75, 2000, 0.8, 80000, 300, 24, 62, 47)
-
-#classical PCA e plota primeiros 2 componentes principais
-pca_result <- prcomp(machines, scale. = TRUE)
-plot(pca_result$x[,1:2])
-
-#
