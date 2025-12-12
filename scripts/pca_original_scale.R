@@ -94,10 +94,6 @@ compute_pca <- function(X = load_machines_subset(),
   library(ggplot2)
   library(ggrepel)
 
-  # -------------------------------
-  # PLOT 3: Scores plot (PC1 vs PC2) - ggplot + ggrepel
-  # -------------------------------
-
   scores <- pca$x
   rownames(scores) <- rownames(X)
 
@@ -203,19 +199,19 @@ compute_pca <- function(X = load_machines_subset(),
   vars_pc2 <- names(sort(abs(load[, 2]), decreasing = TRUE))[1:5]
   vars_key <- unique(c(vars_pc1, vars_pc2))
   X_ext <- X[ext_names, vars_key, drop = FALSE]
-  
+
   cat("\nScores of the machines farthest in the PC1–PC2 space:\n")
   print(head(extremos, 6))
 
   cat("\nMachines farthest in the PC1–PC2 space:\n")
   print(ext_names)
-  
+
   cat("\nVariables with the highest loadings on PC1:\n")
   print(vars_pc1)
-  
+
   cat("\nVariables with the highest loadings on PC2:\n")
   print(vars_pc2)
-  
+
   cat("\nOriginal values of these variables for each extreme machine:\n")
   print(round(X_ext, 3))
 
